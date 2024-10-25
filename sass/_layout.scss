@@ -29,10 +29,18 @@
     // Flex property: flex-grow, flex-shrink, flex-basis
     // Sidebar should not grow nor shrink, and have a width of X%.
     flex: 0 0 18%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .hotel-view {
     background-color: #FFF;
+
+    // TODO remove. here for testing purposes
+    height: 80rem;
     background-color: orangered;
 
     flex: 1;
