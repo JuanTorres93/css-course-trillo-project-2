@@ -201,3 +201,48 @@
     text-align: center;
     padding: 2.5rem;
 }
+
+/////////////////////////////////
+// GALLERY
+.gallery {
+    display: flex;
+
+    &__photo {
+        width: 100%;
+        // DOC show image as a block removes little white
+        // space that can appear below the image if an
+        // inline element
+        display: block;
+    }
+}
+
+
+/////////////////////////////////
+// OVERVIEW
+.overview {
+    display: flex;
+
+    &__heading {}
+
+    &__stars {
+        // DOC Empty space between elements when justify-content
+        // does not fullfil exactly our needs and we do not want
+        // a container to span the whole width.
+        margin-right: auto;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    &__location {}
+
+    &__rating {}
+
+    &__rating-average {}
+
+    &__rating-count {}
+}
