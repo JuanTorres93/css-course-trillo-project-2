@@ -1,3 +1,5 @@
+@use "base" as *;
+
 /////////////////////////////////
 // LOGO
 .logo {
@@ -131,6 +133,10 @@
 
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 0;
+            }
         }
 
         &::before {
@@ -162,6 +168,10 @@
         &:active::before {
             background-color: var(--color-primary-light);
         }
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
     }
 
     &__link {
@@ -180,6 +190,11 @@
             // DOC z-index ONLY works elements with position property
             z-index: 10;
             position: relative;
+
+            @media only screen and (max-width: $bp-medium) {
+                justify-content: center;
+                padding: 2rem;
+            }
         }
     }
 
@@ -191,6 +206,12 @@
         // parent element or pseudo class
         fill: currentColor;
     }
+
+
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin-top: 0;
+    }
 }
 
 /////////////////////////////////
@@ -200,6 +221,10 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 /////////////////////////////////
@@ -395,6 +420,11 @@
         margin-right: auto;
     }
 
+    &__friends {
+        display: flex;
+        align-items: center;
+    }
+
     &__photo {
         box-sizing: content-box;
         width: 4rem;
@@ -403,7 +433,7 @@
         border: 3px solid #FFF;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 }
@@ -470,6 +500,11 @@
         color: var(--color-grey-light-2);
         z-index: 1;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 }
 
 
@@ -478,6 +513,10 @@
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
 
     &__book-now {
         font-size: 2rem;
