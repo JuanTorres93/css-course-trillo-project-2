@@ -323,3 +323,80 @@
         box-shadow: none;
     }
 }
+
+
+/////////////////////////////////
+// PARAGRAPH
+.paragraph {
+    &:not(:last-of-type) {
+        margin-bottom: 2rem;
+    }
+}
+
+/////////////////////////////////
+// LIST
+.list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            margin-right: .7rem;
+            // DOC svg in CSS (older browsers). Good approach if not needed to change its color
+            // background-image: url(../img/SVG/chevron-thin-right.svg);
+            // background-size: cover;
+
+            // DOC svg in CSS (newer browsers). Using masks
+            // DOC mask: Area in which we can see through the element and
+            // see what's behind it.
+            // Basically, we set a backgound image and use the svg as a mask
+            // this gives the impression of chaging the color of the svg.
+            background-color: var(--color-primary);
+            mask-image: url(../img/SVG/chevron-thin-right.svg);
+            // DOC mask-size: similar to background-size
+            mask-size: cover;
+        }
+    }
+}
+
+/////////////////////////////////
+// RECOMMEND
+.recommend {
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-2);
+
+    display: flex;
+    align-items: center;
+
+
+    &__count {
+        margin-right: auto;
+    }
+
+    &__friends {}
+
+    &__photo {
+        box-sizing: content-box;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 3px solid #FFF;
+
+        &:not(:last-child) {
+            margin-right: -1.5rem;
+        }
+    }
+}
