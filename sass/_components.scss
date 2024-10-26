@@ -425,18 +425,21 @@
             width: 1rem;
             margin-right: .7rem;
             // DOC svg in CSS (older browsers). Good approach if not needed to change its color
-            // background-image: url(../img/SVG/chevron-thin-right.svg);
-            // background-size: cover;
+            background-image: url(../img/SVG/chevron-thin-right.svg);
+            background-size: cover;
 
-            // DOC svg in CSS (newer browsers). Using masks
-            // DOC mask: Area in which we can see through the element and
-            // see what's behind it.
-            // Basically, we set a backgound image and use the svg as a mask
-            // this gives the impression of chaging the color of the svg.
-            background-color: var(--color-primary);
-            mask-image: url(../img/SVG/chevron-thin-right.svg);
-            // DOC mask-size: similar to background-size
-            mask-size: cover;
+            @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+                // DOC svg in CSS (newer browsers). Using masks
+                // DOC mask: Area in which we can see through the element and
+                // see what's behind it.
+                // Basically, we set a backgound image and use the svg as a mask
+                // this gives the impression of chaging the color of the svg.
+                background-color: var(--color-primary);
+                mask-image: url(../img/SVG/chevron-thin-right.svg);
+                // DOC mask-size: similar to background-size
+                mask-size: cover;
+                background-image: none;
+            }
         }
     }
 }
